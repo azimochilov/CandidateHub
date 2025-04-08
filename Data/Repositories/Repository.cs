@@ -31,6 +31,8 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : Auditabl
     public async Task<TEntity> InsertAsync(TEntity entity)
     {
         var entry = await this.dbSet.AddAsync(entity);
+        await this.SaveAsync();
+
         return entry.Entity;
     }
 

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CandidateHub.Dtos;
+namespace CandidateHub.Service.Dtos;
 
-public class CandidateDto
+public class CandidateRequestDto
 {
     [Required(ErrorMessage = "First name is required")]
     [StringLength(100, ErrorMessage = "First name cannot be longer than 100 characters")]
