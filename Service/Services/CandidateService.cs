@@ -33,7 +33,7 @@ public class CandidateService : ICandidateService
 
             candidate.UpdatedAt = DateTime.UtcNow;
 
-            candidate = this._candidateRepository.Update(candidate);
+            await this._candidateRepository.SaveAsync();
         }
 
         return _mapper.Map<CandidateResponseDto>(candidate);
