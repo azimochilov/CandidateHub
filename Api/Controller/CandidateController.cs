@@ -23,4 +23,17 @@ public class CandidateController : ControllerBase
             Message = "OK",
             Body = await this.candidateService.AddOrUpdateCandidateAsync(dto)
         });
+
+    [HttpGet]
+    public async Task<IActionResult> GetAsync()
+    {
+        var candidates = await this.candidateService.RetriveAllAsync();
+       
+        return Ok(new Response<IEnumerable<CandidateResponseDto>>
+        {
+            Code = 200,
+            Message = "OK",
+            Body = candidates
+        });
+    }
 }

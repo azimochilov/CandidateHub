@@ -5,5 +5,5 @@ namespace CandidateHub.Service.IServices;
 public interface ICandidateService
 {
     Task<CandidateResponseDto> AddOrUpdateCandidateAsync(CandidateRequestDto dto);
-    
+    Task<IEnumerable<CandidateResponseDto>> RetriveAllAsync();
 }

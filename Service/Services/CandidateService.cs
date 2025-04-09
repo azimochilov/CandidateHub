@@ -3,6 +3,7 @@ using CandidateHub.Data.IRepositories;
 using CandidateHub.Domain.Entities;
 using CandidateHub.Service.Dtos;
 using CandidateHub.Service.IServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace CandidateHub.Service.Services;
 
@@ -37,6 +38,13 @@ public class CandidateService : ICandidateService
         }
 
         return _mapper.Map<CandidateResponseDto>(candidate);
+    }
+
+    public async Task<IEnumerable<CandidateResponseDto>> RetriveAllAsync()
+    {
+        var candidates = await this._candidateRepository.SelectAll()
+            .ToListAsync();
+        return _mapper.Map<IEnumerable<CandidateResponseDto>>(candidates);
     }
 
 }
