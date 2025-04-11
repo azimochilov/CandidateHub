@@ -11,7 +11,9 @@ A robust .NET 6 Web API built to manage candidate data efficiently with PostgreS
 📂 Step-by-step development and progress recorded in GitHub commits.
 
 🚀 Enhancements & Additions
+
 🔗 Database Hosting
+
 Azure PostgreSQL Flexible Server: The project is connected to Microsoft Azure Database for PostgreSQL, eliminating the need for local DB configuration.
 
 Added with sample data to demonstrate caching functionality.
